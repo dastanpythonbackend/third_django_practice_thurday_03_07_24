@@ -1,0 +1,20 @@
+{% extends 'home_page.html' %}
+
+{% block title %}Detail book{% endblock %}
+
+{% block header %}
+<h1>Детально о книге</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'list_books' %}">Вернуться к списку книг</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1>{{detail_book.title}}</h1>
+<p>{{detail_book.author}}</p>
+<p>{{detail_book.description}}</p>
+{% endblock %}

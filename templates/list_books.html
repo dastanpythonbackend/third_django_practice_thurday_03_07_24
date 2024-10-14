@@ -1,0 +1,26 @@
+{% extends 'home_page.html' %}
+
+{% block title %}List books{% endblock %}
+
+{% block header %}
+<h1>Список книг</h1>
+<nav>
+    <ul>
+        {% for book in list_books %}
+        <li>
+            <a href="{% url 'detail_book' book.pk %}">{{ book.title }} - {{ book.author }}</a>
+        </li>
+        {% endfor %}
+        <li>
+            <a href="{% url 'home_page' %}">Вернуться на главную страницу</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+{% for i in list_books %}
+<h1>{{i}}</h1>
+<p>{{i.author}}</p>
+{% endfor %}
+{% endblock %}

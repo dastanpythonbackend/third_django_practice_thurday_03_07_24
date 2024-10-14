@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Home page{% endblock %}</title>
+</head>
+<body>
+<header>
+    {% block header %}
+    <h1>Главная страница</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="{% url 'list_books' %}">Список книг в библиотеке</a>
+            </li>
+            <li>
+                <a href="{% url 'add_book' %}">Добавить внигу</a>
+            </li>
+        </ul>
+    </nav>
+    {% endblock %}
+</header>
+<main>
+    {% block content %}
+    <p>Здравствуйте! Это главная страница библиотеки, которая содержит информацию о том, как использовать приложение,
+        ссылки на разделы библиотеки и возможности добавления новых книг.</p>
+    {% endblock %}
+</main>
+</body>
+</html>

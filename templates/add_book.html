@@ -1,0 +1,27 @@
+{% extends 'home_page.html' %}
+
+{% block title %}Add book{% endblock %}
+
+{% block header %}
+<h1>Добавить книгу</h1>
+<nav>
+    <ul>
+        <li>
+            <a href="{% url 'home_page' %}">Вернуться на главную страницу</a>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="message">{{ message }}</div>
+{% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send</button>
+</form>
+{% endblock %}
